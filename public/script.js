@@ -110,7 +110,7 @@ if(exanak=="Amar"){
 }
 else if(exanak=="Dzmer"){
     for (var i in grassArr) {
-         grassArr[i].sharjvel();
+       //  grassArr[i].sharjvel();
      
     }
 }

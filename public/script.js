@@ -105,7 +105,7 @@ function draw() {
 if(exanak=="Amar"){
     for (var i in grassArr) {
         grassArr[i].bazmanal();
-       //  grassArr[i].sharjvel();
+      
     }
 }
 else if(exanak=="Dzmer"){

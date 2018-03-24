@@ -32,7 +32,7 @@ var youtude = [];
 
 
 function setup() {
-    frameRate(4);
+    frameRate(15);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
@@ -67,7 +67,7 @@ function setup() {
 
 
 function draw() {
-
+    noStroke();
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 

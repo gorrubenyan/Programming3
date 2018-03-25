@@ -30,11 +30,11 @@ var Gishatich = [];
 var wifii = [];
 var youtude = [];
 
-
+var exanak = prompt("Nermuceq exanaky(Amar, Dzmer)")
 function setup() {
-    frameRate(4);
+    frameRate(10);
     createCanvas(matrix[0].length * side, matrix.length * side);
-    background('#acacac');
+    background('#A8EBF7');
 
     for (var y = 0; y < matrix.length; ++y) {
         for (var x = 0; x < matrix[y].length; ++x) {
@@ -50,7 +50,7 @@ function setup() {
                 var gishaticnher = (new gishatich(x, y))
                 Gishatich.push(gishaticnher)
             }
-             else if (matrix[y][x] == 4) {
+            else if (matrix[y][x] == 4) {
                 wifii.push(new wifi(x, y));
             }
             else if (matrix[y][x] == 5) {
@@ -67,14 +67,19 @@ function setup() {
 
 
 function draw() {
-
+    noStroke();
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
-            if (matrix[y][x] == 1) {
+            if (matrix[y][x] == 1 && (exanak == "Amar" || exanak == "amar")) {
                 fill("green");
                 rect(x * side, y * side, side, side);
             }
+            else if (matrix[y][x] == 1 && (exanak == "Dzmer" || exanak == "dzmer")) {
+                fill("#05F8AB");
+                rect(x * side, y * side, side, side);
+            }
+
             else if (matrix[y][x] == 0) {
                 fill("#acacac");
                 rect(x * side, y * side, side, side);
@@ -87,7 +92,7 @@ function draw() {
                 fill("red");
                 rect(x * side, y * side, side, side);
             }
-             else if (matrix[y][x] == 4) {
+            else if (matrix[y][x] == 4) {
                 fill("blue");
                 rect(x * side, y * side, side, side);
             }
@@ -95,33 +100,43 @@ function draw() {
                 fill("black");
                 rect(x * side, y * side, side, side);
             }
+
+        }
+    }
+    if (exanak == "Amar") {
+        for (var i in grassArr) {
+            grassArr[i].bazmanal();
+
+        }
+    }
+    else if (exanak == "Dzmer") {
+        for (var i in grassArr) {
+            //  grassArr[i].sharjvel();
+
         }
     }
 
-    for (var i in grassArr) {
-        grassArr[i].bazmanal();
+    for (var i in xotakerner) {
+        xotakerner[i].utel();
     }
 
-     for (var i in xotakerner) {
-        xotakerner[i].utel();    
-     }
+    for (var i in Gishatich) {
+        Gishatich[i].utel();
 
-     for(var i in Gishatich){
-       Gishatich[i].utel();
-     }
+    }
 
-     for (var i in wifii) {
-        
+    for (var i in wifii) {
+
         wifii[i].sharjvel()
         wifii[i].utel()
         wifii[i].mahanal()
-   
+
     }
     for (var i in youtude) {
-        
+
         youtude[i].sharjvel()
         youtude[i].utel()
         youtude[i].mahanal()
-   
+
     }
 }

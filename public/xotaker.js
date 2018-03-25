@@ -5,7 +5,7 @@ class Xotaker {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.energy = 5;
+        this.energy = 15;
         this.directions = [];
         this.index = 2;
     }

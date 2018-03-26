@@ -29,12 +29,57 @@ var xotakerner = [];
 var Gishatich = [];
 var wifii = [];
 var youtude = [];
+var exanak = "garun"
+// var exanak = prompt("Nermuceq exanaky(amar, dzmer, ashun; garun;)")
 
-var exanak = prompt("Nermuceq exanaky(Amar, Dzmer)")
+myVar = setInterval(function () {
+    if (exanak == "garun") {
+        exanak = "amar"
+    }
+    else if (exanak == "amar") {
+        exanak = "ashun"
+    }
+    else if (exanak == "ashun") {
+        exanak = "dzmer"
+    }
+    else if (exanak == "dzmer") {
+        exanak = "garun"
+    }
+
+}, 2000);
+
+
+
+
+
+
 function setup() {
-    frameRate(10);
+   myVar = setInterval(function () {
+    if (exanak == "garun") {
+       frameRate(22)
+    }
+    else if (exanak == "amar") {
+       frameRate(12)
+    }
+    else if (exanak == "ashun") {
+       frameRate(8)
+    }
+    else if (exanak == "dzmer") {
+     frameRate(5)
+    }
+
+}, 2000);
+
+   
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#A8EBF7');
+    var myVar;
+
+
+
+
+
+
 
     for (var y = 0; y < matrix.length; ++y) {
         for (var x = 0; x < matrix[y].length; ++x) {
@@ -71,12 +116,22 @@ function draw() {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
-            if (matrix[y][x] == 1 && (exanak == "Amar" || exanak == "amar")) {
+            if (matrix[y][x] == 1 && exanak == "amar") {
                 fill("green");
                 rect(x * side, y * side, side, side);
             }
-            else if (matrix[y][x] == 1 && (exanak == "Dzmer" || exanak == "dzmer")) {
+            else if (matrix[y][x] == 1 && exanak == "garun") {
                 fill("#05F8AB");
+                rect(x * side, y * side, side, side);
+            }
+
+            else if (matrix[y][x] == 1 && exanak == "ashun") {
+                fill("#FCF3CF");
+                rect(x * side, y * side, side, side);
+            }
+
+            else if (matrix[y][x] == 1 && exanak == "dzmer") {
+                fill("#73C6B6  ");
                 rect(x * side, y * side, side, side);
             }
 
@@ -84,8 +139,23 @@ function draw() {
                 fill("#acacac");
                 rect(x * side, y * side, side, side);
             }
-            else if (matrix[y][x] == 2) {
+            else if (matrix[y][x] == 2 && exanak == "amar") {
                 fill("yellow");
+                rect(x * side, y * side, side, side);
+            }
+
+             else if (matrix[y][x] == 2 && exanak == "garun") {
+                fill("#F9E79F");
+                rect(x * side, y * side, side, side);
+            }
+
+            else if (matrix[y][x] == 2 && exanak == "ashun") {
+                fill("#F4D03F");
+                rect(x * side, y * side, side, side);
+            }
+
+            else if (matrix[y][x] == 2 && exanak == "dzmer") {
+                fill("#B7950B");
                 rect(x * side, y * side, side, side);
             }
             else if (matrix[y][x] == 3) {
@@ -103,13 +173,13 @@ function draw() {
 
         }
     }
-    if (exanak == "Amar") {
-        for (var i in grassArr) {
-            grassArr[i].bazmanal();
+   if (exanak == "amar" || exanak == "ashun" || exanak == "garun" ) {
+    for (var i in grassArr) {
+        grassArr[i].bazmanal();
 
         }
     }
-    else if (exanak == "Dzmer") {
+    else if ( exanak == "dzmer") {
         for (var i in grassArr) {
             //  grassArr[i].sharjvel();
 
@@ -118,11 +188,14 @@ function draw() {
 
     for (var i in xotakerner) {
         xotakerner[i].utel();
+         xotakerner[i].bazmanal();
+          xotakerner[i].mahanal();
     }
 
     for (var i in Gishatich) {
         Gishatich[i].utel();
-
+          Gishatich[i].bazmanal();
+            Gishatich[i].mahanal();
     }
 
     for (var i in wifii) {
